@@ -1,7 +1,7 @@
 # App Deployed Link - https://64df89dcdb676721cd72e69f--poetic-begonia-1e04a9.netlify.app/
 # Backend Deployed Link-https://taskeploy.onrender.com
 
-# MiniInvoice![taskProject](https://github.com/preetuuppp/MiniInvoice/assets/112836053/8ee894b5-9a9d-4ac7-b3d9-a40d24c792f3)
+# MiniInvoice
+![taskProject](https://github.com/preetuuppp/MiniInvoice/assets/112836053/51bc66dc-2192-4c22-a595-fb049bac2a3a)
 
-
-![task2](https://github.com/preetuuppp/MiniInvoice/assets/112836053/4a4783e3-3e2f-4f2b-a247-79cde530dc94)
+![task2](https://github.com/preetuuppp/MiniInvoice/assets/112836053/be6ce695-fcf5-4d62-be09-f0bcd73899cc)
