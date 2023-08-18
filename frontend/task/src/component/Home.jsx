@@ -5,6 +5,7 @@ import { RxCross1 } from "react-icons/rx";
 import { AiOutlinePlusSquare } from "react-icons/ai";
 import { CgNotes } from "react-icons/cg";
 import { ImAttachment } from "react-icons/im";
+import { FiPhoneCall } from "react-icons/fi";
 import {
   HiOutlineTruck,
   HiOutlineFolder,
@@ -18,7 +19,7 @@ const InvoiceForm = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/cart")
+      .get("https://taskeploy.onrender.com/cart")
       .then((response) => {
         setItems([...response.data]);
 
@@ -48,10 +49,13 @@ const InvoiceForm = () => {
       itemToUpdate.amount = itemToUpdate.quantity * itemToUpdate.rate;
 
       axios
-        .patch(`http://localhost:8080/cart/update/${itemToUpdate._id}`, {
-          [field]: value,
-          amount: itemToUpdate.amount,
-        })
+        .patch(
+          `https://taskeploy.onrender.com/cart/update/${itemToUpdate._id}`,
+          {
+            [field]: value,
+            amount: itemToUpdate.amount,
+          }
+        )
         .then((response) => {
           console.log("Item updated successfully:", response.data);
         })
@@ -62,9 +66,12 @@ const InvoiceForm = () => {
       itemToUpdate.nitem = value;
 
       axios
-        .patch(`http://localhost:8080/cart/update/${itemToUpdate._id}`, {
-          nitem: value,
-        })
+        .patch(
+          `https://taskeploy.onrender.com/cart/update/${itemToUpdate._id}`,
+          {
+            nitem: value,
+          }
+        )
         .then((response) => {
           console.log("Item name updated successfully:", response.data);
         })
@@ -80,7 +87,7 @@ const InvoiceForm = () => {
   const addNewItem = () => {
     const newItem = { nitem: "", quantity: 0, rate: 0 };
     axios
-      .post("http://localhost:8080/cart/add", newItem)
+      .post("https://taskeploy.onrender.com/cart/add", newItem)
       .then((response) => {
         setItems([...items, response.data]);
       })
@@ -91,7 +98,7 @@ const InvoiceForm = () => {
 
   const handleDeleteItem = (index, itemId) => {
     axios
-      .delete(`http://localhost:8080/cart/delete/${itemId}`)
+      .delete(`https://taskeploy.onrender.com/cart/delete/${itemId}`)
       .then((response) => {
         console.log("Item deleted successfully:", response.data);
         const updatedItems = items.filter((item, idx) => idx !== index);
@@ -210,6 +217,16 @@ const InvoiceForm = () => {
         <div className="bottomlast">
           <HiPencil />
           Add Signature
+        </div>
+      </div>
+      <div className="bottomSec">
+        <div>
+          <CgNotes />
+          Add Additional Info
+        </div>
+        <div>
+          <FiPhoneCall />
+          Add Contact Details
         </div>
       </div>
     </div>
